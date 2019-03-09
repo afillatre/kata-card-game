@@ -22,4 +22,23 @@ public class Card {
     public boolean isEqualTo(Card otherCard) {
         return getValue() == otherCard.getValue();
     }
+
+    public String toString() {
+        final String symbol;
+        switch (suit) {
+            case HEARTS:
+                symbol = "♥";
+                break;
+            case SPADES:
+                symbol = "♠";
+                break;
+            case DIAMONDS:
+                symbol = "♦";
+                break;
+            default:
+                symbol = "♣";
+                break;
+        }
+        return "[" + this.value.getDisplayValue() + symbol + "]";
+    }
 }
